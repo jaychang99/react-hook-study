@@ -1,7 +1,28 @@
 import "./App.css";
+import { useState } from "react";
 
 function App() {
-  return <div>Hello World</div>;
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        증가
+      </button>
+      <h1>{count}</h1>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        감소
+      </button>
+    </>
+  );
 }
 
 export default App;
