@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import UserCard from "./common/UserCard";
+import UserCardSquashed from "./common/UserCardSquashed";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +25,7 @@ function App() {
       </button>
       <hr />
       <UserCard />
+      <UserCardSquashed />
     </>
   );
 }
