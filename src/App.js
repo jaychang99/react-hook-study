@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import UserCard from "./common/UserCard";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,8 @@ function App() {
       >
         감소
       </button>
+      <hr />
+      <UserCard />
     </>
   );
 }
