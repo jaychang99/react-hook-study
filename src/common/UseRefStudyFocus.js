@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 function UseRefStudyFocus() {
   const inputRef = useRef();
@@ -6,6 +6,11 @@ function UseRefStudyFocus() {
   function focusInput() {
     inputRef.current.focus();
   }
+
+  // 페이지 로딩 시 자동으로 input focus
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <div>
