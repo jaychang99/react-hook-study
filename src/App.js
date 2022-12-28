@@ -19,18 +19,18 @@ function App() {
   return (
     <div>
       <h1>UseRef 스터디</h1>
-      <div class="container">
-        <div class="box">
+      <div className="container">
+        <div className="box">
           <h2>일반 변수 사용</h2>
           <p>myVar 의 값: {myVar}</p>
           <button onClick={incrementMyVar}>myVar 증가시키기</button>
           <button onClick={decrementMyVar}>myVar 감소시키기</button>
         </div>
-        <div class="box">
+        <div className="box">
           <h2>state 사용</h2>
           <p>myState 의 값: {myState}</p>
         </div>
-        <div class="box">
+        <div className="box">
           <h2>ref 사용</h2>
           <p>myRef.current 의 값: {myRef.current}</p>
         </div>
