@@ -28,6 +28,16 @@ function App() {
     setMyState(myState - 1);
   }
 
+  // myRef 관련
+
+  function incrementMyRef() {
+    myRef.current += 1;
+  }
+
+  function decrementMyRef() {
+    myRef.current -= 1;
+  }
+
   return (
     <div>
       <h1>UseRef 스터디</h1>
@@ -47,6 +57,8 @@ function App() {
         <div className="box">
           <h2>ref 사용</h2>
           <p>myRef.current 의 값: {myRef.current}</p>
+          <button onClick={incrementMyRef}>myRef 증가시키기</button>
+          <button onClick={decrementMyRef}>myRef 감소시키기</button>
         </div>
       </div>
     </div>
