@@ -6,36 +6,45 @@ function App() {
   const [myState, setMyState] = useState(0);
   const myRef = useRef(0);
 
+  //출력 관련
+  function displayValues() {
+    console.log(`myVar: ${myVar}, myState: ${myState}, myRef: ${myRef.current}`);
+  }
+
   // myVar 관련
 
   function incrementMyVar() {
     myVar += 1;
-    console.log(`myVar 이 ${myVar} 로 변경되었습니다. `);
+    displayValues();
   }
 
   function decrementMyVar() {
     myVar -= 1;
-    console.log(`myVar 이 ${myVar} 로 변경되었습니다. `);
+    displayValues();
   }
 
   // myState 관련
 
   function incrementMyState() {
     setMyState(myState + 1);
+    displayValues();
   }
 
   function decrementMyState() {
     setMyState(myState - 1);
+    displayValues();
   }
 
   // myRef 관련
 
   function incrementMyRef() {
     myRef.current += 1;
+    displayValues();
   }
 
   function decrementMyRef() {
     myRef.current -= 1;
+    displayValues();
   }
 
   return (
