@@ -6,6 +6,15 @@ function App() {
   const [myState, setMyState] = useState(0);
   const myRef = useRef(0);
 
+  // 아무것도 안하고 그냥 rerender 만 시키기
+  const [rerender, setRerender] = useState(true);
+
+  function triggerRerender() {
+    // state 가 바뀌면 rerender 된다는 점을 이용.
+    // rerender 변수가 true <-> false 바뀌면서 계속 trigger (값 자체는 중요치 않음)
+    setRerender(!rerender);
+  }
+
   //출력 관련
   function displayValues() {
     console.log(`myVar: ${myVar}, myState: ${myState}, myRef: ${myRef.current}`);
@@ -68,6 +77,9 @@ function App() {
           <p>myRef.current 의 값: {myRef.current}</p>
           <button onClick={incrementMyRef}>myRef 증가시키기</button>
           <button onClick={decrementMyRef}>myRef 감소시키기</button>
+        </div>
+        <div className="box">
+          <button onClick={triggerRerender}>아무것도 하지 않고 그냥 rerender 만 시키기!</button>
         </div>
       </div>
     </div>
