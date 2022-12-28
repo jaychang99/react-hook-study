@@ -40,3 +40,15 @@ body {
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  text-align: center;
+}
+
+div.box {
+  margin: 20px;
+  padding: 20px;
+
+  border: 1px solid black;
+  border-radius: 20px;
+}
