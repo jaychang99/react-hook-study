@@ -5,6 +5,9 @@ function UseRefStudy() {
   const [myState, setMyState] = useState(0);
   const myRef = useRef(0);
 
+  // 이전 state 저장을 위한 ref
+  const myPrevStateRef = useRef();
+
   // 아무것도 안하고 그냥 rerender 만 시키기
   const [rerender, setRerender] = useState(true);
 
@@ -34,11 +37,13 @@ function UseRefStudy() {
   // myState 관련
 
   function incrementMyState() {
+    myPrevStateRef.current = myState;
     setMyState(myState + 1);
     displayValues();
   }
 
   function decrementMyState() {
+    myPrevStateRef.current = myState;
     setMyState(myState - 1);
     displayValues();
   }
@@ -79,6 +84,9 @@ function UseRefStudy() {
         </div>
         <div className="box">
           <button onClick={triggerRerender}>아무것도 하지 않고 그냥 rerender 만 시키기!</button>
+        </div>
+        <div className="box">
+          이전 state 인 {myPrevStateRef.current} 에서 현재 state 인 {myState} 로 변경되었습니다.
         </div>
       </div>
     </div>
