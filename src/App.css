@@ -41,6 +41,8 @@ body {
   }
 }
 
+/* 아래부터 커스텀 스타일링 */
+
 h1 {
   text-align: center;
 }
@@ -51,4 +53,8 @@ div.box {
 
   border: 1px solid black;
   border-radius: 20px;
+}
+
+button {
+  margin: 0 10px;
 }
