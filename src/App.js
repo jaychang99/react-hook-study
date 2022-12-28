@@ -6,6 +6,8 @@ function App() {
   const [myState, setMyState] = useState(0);
   const myRef = useRef(0);
 
+  // myVar 관련
+
   function incrementMyVar() {
     myVar += 1;
     console.log(`myVar 이 ${myVar} 로 변경되었습니다. `);
@@ -14,6 +16,16 @@ function App() {
   function decrementMyVar() {
     myVar -= 1;
     console.log(`myVar 이 ${myVar} 로 변경되었습니다. `);
+  }
+
+  // myState 관련
+
+  function incrementMyState() {
+    setMyState(myState + 1);
+  }
+
+  function decrementMyState() {
+    setMyState(myState - 1);
   }
 
   return (
@@ -29,6 +41,8 @@ function App() {
         <div className="box">
           <h2>state 사용</h2>
           <p>myState 의 값: {myState}</p>
+          <button onClick={incrementMyState}>myState 증가시키기</button>
+          <button onClick={decrementMyState}>myState 감소시키기</button>
         </div>
         <div className="box">
           <h2>ref 사용</h2>
