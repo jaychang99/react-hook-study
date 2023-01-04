@@ -8,6 +8,7 @@ import { useState } from "react";
 import Test from "common/useEffect/Test";
 import WidthViewer from "common/useEffect/WidthViewer";
 import Study from './common/useEffect/Study';
+import UseContextPage from "common/useContext";
 
 function App() {
   const [showUseEffectTest, setShowUseEffectTest] = useState(true)
@@ -23,6 +24,7 @@ function App() {
           <Route path="/test" exact={true} element={<Test />} />
           <Route path="/study" exact={true} element={<Study />} />
           <Route path="/unmounttest" exact={true} element={<WidthViewer />} />
+          <Route path="/usecontext" exact={true} element={<UseContextPage />} />
         </Routes>
       </Router>
     </>
