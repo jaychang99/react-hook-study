@@ -1,11 +1,13 @@
-import React from 'react'
+import { MyContext } from 'common/useContext'
+import React, { useContext } from 'react'
 
-function UserName(props) {
+function UserName() {
+  const user = useContext(MyContext)
+
   return (
     <div>
       <h4>UserName</h4>
-      <p>UserCard 컴포넌트에서 {JSON.stringify(props.user)} prop 을 받아왔습니다. </p>
-      <p>사용자의 이름은: {props.user.name}</p>
+      <p>사용자의 이름은: {user.name}</p>
     </div>
   )
 }
