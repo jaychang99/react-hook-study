@@ -11,6 +11,7 @@ import Study from './common/useEffect/Study';
 import UseContextPage from "common/useContext";
 import UseMemoPage from "common/UseCallback";
 import UseMemoObject from "common/UseCallback/subpages/UseMemoObject";
+import UseCallbackPage from "common/UseCallback/subpages/useCallbackPage";
 
 function App() {
   const [showUseEffectTest, setShowUseEffectTest] = useState(true)
@@ -29,6 +30,7 @@ function App() {
           <Route path="/usecontext" exact={true} element={<UseContextPage />} />
           <Route path="/usememo" exact={true} element={<UseMemoPage />} />
           <Route path="/usememo/object" exact={true} element={<UseMemoObject />} />
+          <Route path="/usecallback" exact={true} element={<UseCallbackPage />} />
         </Routes>
       </Router>
     </>
