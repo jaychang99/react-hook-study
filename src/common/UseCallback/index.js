@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useState, useRef } from 'react';
 
 
@@ -32,7 +32,11 @@ function UseCallbackPage() {
     setB(bRef.current?.value)
   }
 
-  const sum = getSum(Number(a), 50)
+  const sum =
+    useMemo(() => {
+      return getSum(Number(a), 50)
+    }, [a])
+
   const diff = getDiff(Number(b), 50)
 
 
