@@ -6,9 +6,12 @@ function UseMemoObject() {
   const [option, setOption] = useState("찍먹")
   const [campus, setCampus] = useState("율전")
 
-  const location = {
-    city: campus === "율전" ? "수원" : "서울"
-  }
+  const location = useMemo(() => {
+    return {
+      city: campus === "율전" ? "수원" : "서울"
+    }
+  }, [campus])
+
 
   useEffect(() => {
     console.log("location 이 변경됨! 🤭")
