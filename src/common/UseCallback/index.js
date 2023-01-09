@@ -19,7 +19,7 @@ function getDiff(a, b) {
 }
 
 
-function UseCallbackPage() {
+function UseMemoPage() {
   const [a, setA] = useState(0)
   const [b, setB] = useState(0)
 
@@ -42,7 +42,7 @@ function UseCallbackPage() {
 
   return (
     <>
-      <div>UseCallbackPage</div>
+      <div>UseMemoPage</div>
       <input ref={aRef} />
 
 
@@ -65,4 +65,4 @@ function UseCallbackPage() {
   )
 }
 
-export default UseCallbackPage
+export default UseMemoPage

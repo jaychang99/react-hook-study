@@ -9,7 +9,8 @@ import Test from "common/useEffect/Test";
 import WidthViewer from "common/useEffect/WidthViewer";
 import Study from './common/useEffect/Study';
 import UseContextPage from "common/useContext";
-import UseCallbackPage from "common/UseCallback";
+import UseMemoPage from "common/UseCallback";
+import UseMemoObject from "common/UseCallback/subpages/UseMemoObject";
 
 function App() {
   const [showUseEffectTest, setShowUseEffectTest] = useState(true)
@@ -26,7 +27,8 @@ function App() {
           <Route path="/study" exact={true} element={<Study />} />
           <Route path="/unmounttest" exact={true} element={<WidthViewer />} />
           <Route path="/usecontext" exact={true} element={<UseContextPage />} />
-          <Route path="/usecallback" exact={true} element={<UseCallbackPage />} />
+          <Route path="/usememo" exact={true} element={<UseMemoPage />} />
+          <Route path="/usememo/object" exact={true} element={<UseMemoObject />} />
         </Routes>
       </Router>
     </>
