@@ -1,9 +1,20 @@
 import React, { useMemo } from 'react'
 import { useState, useRef } from 'react';
+import { useEffect } from 'react';
 
 function UseMemoObject() {
   const [option, setOption] = useState("찍먹")
   const [campus, setCampus] = useState("율전")
+
+  const location = {
+    city: campus === "율전" ? "수원" : "서울"
+  }
+
+  useEffect(() => {
+    console.log("location 이 변경됨! 🤭")
+  }, [location])
+
+
 
 
   return (
@@ -21,6 +32,7 @@ function UseMemoObject() {
         setCampus(campus === "율전" ? "명륜" : "율전")
       }}>장소 바꾸기</button>
       <p>{campus}</p>
+      <p>도시: {location.city}</p>
       <hr />
 
     </>
