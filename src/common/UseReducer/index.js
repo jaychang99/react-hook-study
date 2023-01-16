@@ -10,15 +10,28 @@ const initialState = {
 }
 
 function reducer(state, action) {
-  console.log('reducer 가 일을 합니다. ')
-  const newItem = {
-    id: Date.now(),
-    name: action.name
+  switch (action.type) {
+    case "add-todo":
+
+      const newItem = {
+        id: Date.now(),
+        name: action.name
+      }
+      return {
+        count: state.count + 1,
+        items: [...state.items, newItem]
+      }
+    case "delete-todo":
+
+
+      return {
+        count: state.count - 1,
+        items: state.items.filter((item) => item.id !== action.id)
+      }
+    default:
+      return state
   }
-  return {
-    count: state.count + 1,
-    items: [...state.items, newItem]
-  }
+
 }
 
 function UseReducerPage() {
@@ -35,11 +48,11 @@ function UseReducerPage() {
       </div>
       <input onChange={(e) => { setInputValue(e.target.value) }} />
       <button onClick={() => {
-        dispatch({ name: inputValue })
+        dispatch({ type: "add-todo", name: inputValue })
       }}>등록</button>
       <hr />
       <div>
-        {data.items.map((item) => (<TodoItem name={item.name} />))}
+        {data.items.map((item) => (<TodoItem name={item.name} id={item.id} dispatch={dispatch} />))}
       </div>
 
     </div>
