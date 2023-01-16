@@ -73,7 +73,7 @@ function UseReducerPage() {
       }}>등록</button>
       <hr />
       <div>
-        {data.items.map((item) => (<TodoItem name={item.name} id={item.id} dispatch={dispatch} completed={item.completed} />))}
+        {data.items.map((item) => (<TodoItem key={item.id} name={item.name} id={item.id} dispatch={dispatch} completed={item.completed} />))}
       </div>
 
     </div>
