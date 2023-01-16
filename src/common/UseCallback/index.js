@@ -3,7 +3,6 @@ import { useState, useRef } from 'react';
 
 
 function getSum(a, b) {
-  console.log("getSum called")
   for (let i = 0; i < 1000000000; i++) {
     // do nothing
   }
@@ -14,7 +13,6 @@ function getSum(a, b) {
 }
 
 function getDiff(a, b) {
-  console.log("getDiff called")
   return a - b
 }
 
@@ -32,10 +30,11 @@ function UseMemoPage() {
     setB(bRef.current?.value)
   }
 
-  const sum =
-    useMemo(() => {
-      return getSum(Number(a), 50)
-    }, [a])
+  const sum = useMemo(() => {
+    return getSum(Number(a), 50)
+  }, [a])
+
+
 
   const diff = getDiff(Number(b), 50)
 

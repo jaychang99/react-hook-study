@@ -2,17 +2,23 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect, useCallback } from 'react';
 
-function UseCallbackPage() {
+function useCallbackObject() {
   const [count, setCount] = useState(0)
-  const [option, setOption] = useState("찍먹")
+  const [dark, setDark] = useState(true)
 
+  const paragraphStyle = (dark) => {
+    return {
 
+      padding: "16px",
+      backgroundColor: dark ? "black" : "skyblue",
+      color: dark ? "skyblue" : "black",
+      transition: "0.2s"
+    }
+  }
 
   const logger = useCallback(() => {
     console.log("현재 숫자는", count, "입니다")
   }, [count])
-
-
 
   useEffect(() => {
     console.log("logger 함수 변경")
@@ -20,7 +26,7 @@ function UseCallbackPage() {
 
 
   return (<>
-    <div>UseCallbackPage</div>
+    <div>useCallbackObject</div>
 
     <h1>
       함수 호출하기
@@ -36,14 +42,17 @@ function UseCallbackPage() {
     <button onClick={logger}>로그 찍기</button>
 
 
-    <h1>뿌먹 VS 찍먹</h1>
+    <h1>다크  VS 라이트</h1>
     <button onClick={() => {
-      setOption(option === "찍먹" ? "뿌먹" : "찍먹")
-    }}>취향 바꾸기</button>
-    <p>{option}</p>
+      setDark(dark ? false : true)
+    }}>모드 전환</button>
+    <p style={
+      paragraphStyle
+    }>{dark ? "dark mode" : "light mode"}</p>
+
     <hr />
   </>
   )
 }
 
-export default UseCallbackPage
+export default useCallbackObject

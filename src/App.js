@@ -11,6 +11,7 @@ import Study from './common/useEffect/Study';
 import UseContextPage from "common/useContext";
 import UseMemoPage from "common/UseCallback";
 import UseMemoObject from "common/UseCallback/subpages/UseMemoObject";
+import UseCallbackObject from "common/UseCallback/subpages/useCallbackObject";
 import UseCallbackPage from "common/UseCallback/subpages/useCallbackPage";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/usememo" exact={true} element={<UseMemoPage />} />
           <Route path="/usememo/object" exact={true} element={<UseMemoObject />} />
           <Route path="/usecallback" exact={true} element={<UseCallbackPage />} />
+          <Route path="/usecallback/object" exact={true} element={<UseCallbackObject />} />
         </Routes>
       </Router>
     </>
