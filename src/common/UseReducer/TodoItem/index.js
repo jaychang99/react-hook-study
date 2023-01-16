@@ -1,11 +1,9 @@
 import React from 'react'
 
-function TodoItem({ name, dispatch, id, completed }) {
+function TodoItem({ name, completed, deleteItem, toggleItem }) {
   return (
     <div>
-      <span onClick={() => {
-        dispatch({ type: "toggle-todo", id: id })
-      }} style={{
+      <span onClick={toggleItem} style={{
 
         color: completed ? "gray" : "black",
         textDecoration: completed ? "line-through" : "none",
@@ -15,9 +13,7 @@ function TodoItem({ name, dispatch, id, completed }) {
         {name}
 
       </span>
-      <button onClick={() => {
-        dispatch({ type: "delete-todo", id: id })
-      }}>삭제</button>
+      <button onClick={deleteItem}>삭제</button>
     </div >
   )
 }
