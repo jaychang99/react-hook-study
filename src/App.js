@@ -13,6 +13,7 @@ import UseMemoPage from "common/UseCallback";
 import UseMemoObject from "common/UseCallback/subpages/UseMemoObject";
 import UseCallbackObject from "common/UseCallback/subpages/useCallbackObject";
 import UseCallbackPage from "common/UseCallback/subpages/useCallbackPage";
+import UseReducerPage from "common/UseReducer";
 
 function App() {
   const [showUseEffectTest, setShowUseEffectTest] = useState(true)
@@ -33,6 +34,7 @@ function App() {
           <Route path="/usememo/object" exact={true} element={<UseMemoObject />} />
           <Route path="/usecallback" exact={true} element={<UseCallbackPage />} />
           <Route path="/usecallback/object" exact={true} element={<UseCallbackObject />} />
+          <Route path="/usereducer" exact={true} element={<UseReducerPage />} />
         </Routes>
       </Router>
     </>
